@@ -1,3 +1,9 @@
+gst-plugins-base1.0 (1.20.1-1genio3) jammy; urgency=medium
+
+  * Add new symbol introduced by the patches.
+
+ -- Pablo Sun <pablo.sun@mediatek.com>  Thu, 20 Jul 2023 18:09:32 +0800
+
 gst-plugins-base1.0 (1.20.1-1genio2) jammy; urgency=medium
 
   * Add patches from IoT Yocto v23.1 to support video decoder on 
