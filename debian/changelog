@@ -1,3 +1,10 @@
+gst-plugins-base1.0 (1.20.1-1genio2) jammy; urgency=medium
+
+  * Add patches from IoT Yocto v23.1 to support video decoder on 
+    Genio platform.
+
+ -- Pablo Sun <pablo.sun@mediatek.com>  Thu, 20 Jul 2023 16:45:39 +0800
+
 gst-plugins-base1.0 (1.20.1-1) unstable; urgency=medium
 
   * New upstream bugfix release.
