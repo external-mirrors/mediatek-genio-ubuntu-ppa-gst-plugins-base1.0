@@ -1,0 +1,10 @@
+0001-ENGR00312515-get-caps-from-src-pad-when-query-caps.patch
+0002-viv-fb-Make-sure-config.h-is-included.patch
+0003-ssaparse-enhance-SSA-text-lines-parsing.patch
+0004-video-Add-NV12_16L32S-aka-Mediatek-MM21-support.patch
+0005-video-Add-an-helper-to-extrapolate-strides.patch
+0006-tests-video-Add-a-unit-test-for-stride-extrapolation.patch
+0007-doc-Add-NV12_16L32S-into-the-cache.patch
+0008-video-Fix-NV12_16L32-size-calculation.patch
+0009-gstrawvideoparse-Fix-frame-size-calculation.patch
+0010-video-format-Add-YM16-support-for-MJPEG-decode.patch

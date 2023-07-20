@@ -1,0 +1,34 @@
+From: Macross Chen <macross.chen@mediatek.com>
+Date: Mon, 25 Jul 2022 10:47:00 +0800
+Subject: gstrawvideoparse: Fix frame size calculation
+
+fix the last_plane_size of GST_VIDEO_FORMAT_NV12_16L32S UV subsample
+ case in gst_raw_video_parse_update_info().
+
+Signed-off-by: Macross Chen <macross.chen@mediatek.com>
+
+%% original patch: MM21-0012-gstrawvideoparse-Fix-frame-size-calculation.patch
+---
+ gst/rawparse/gstrawvideoparse.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/gst/rawparse/gstrawvideoparse.c b/gst/rawparse/gstrawvideoparse.c
+index fd1a993..e17507b 100644
+--- a/gst/rawparse/gstrawvideoparse.c
++++ b/gst/rawparse/gstrawvideoparse.c
+@@ -1163,6 +1163,15 @@ gst_raw_video_parse_update_info (GstRawVideoParseConfig * config)
+     gint y_tiles = GST_VIDEO_TILE_Y_TILES (stride);
+     gint tile_width = 1 << GST_VIDEO_FORMAT_INFO_TILE_WS (info->finfo);
+     gint tile_height = 1 << GST_VIDEO_FORMAT_INFO_TILE_HS (info->finfo);
++
++    if (GST_VIDEO_FORMAT_INFO_FORMAT(info->finfo) == GST_VIDEO_FORMAT_NV12_16L32S) {
++      /* UV is subsampled */
++      /* issue[1340] was submitted to freedesktop for tracking */
++      if (last_plane == 1) {
++        tile_height = tile_height / 2;
++      }
++    }
++
+     last_plane_size = x_tiles * y_tiles * tile_width * tile_height;
+   } else {
+     gint comp[GST_VIDEO_MAX_COMPONENTS];
