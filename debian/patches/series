@@ -8,3 +8,6 @@
 0008-video-Fix-NV12_16L32-size-calculation.patch
 0009-gstrawvideoparse-Fix-frame-size-calculation.patch
 0010-video-format-Add-YM16-support-for-MJPEG-decode.patch
+CVE-2023-37328-1.patch
+CVE-2023-37328-2.patch
+CVE-2023-37327-2.patch

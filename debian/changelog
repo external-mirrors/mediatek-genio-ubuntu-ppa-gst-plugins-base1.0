@@ -1,15 +1,26 @@
-gst-plugins-base1.0 (1.20.1-1genio3) jammy; urgency=medium
-
-  * Add new symbol introduced by the patches.
-
- -- Pablo Sun <pablo.sun@mediatek.com>  Thu, 20 Jul 2023 18:09:32 +0800
-
-gst-plugins-base1.0 (1.20.1-1genio2) jammy; urgency=medium
+gst-plugins-base1.0 (1.20.1-1ubuntu0.1genio1) jammy; urgency=medium
 
   * Add patches from IoT Yocto v23.1 to support video decoder on 
     Genio platform.
+  * Add new symbol introduced by the patches.
 
  -- Pablo Sun <pablo.sun@mediatek.com>  Thu, 20 Jul 2023 16:45:39 +0800
+
+gst-plugins-base1.0 (1.20.1-1ubuntu0.1) jammy-security; urgency=medium
+
+  * SECURITY UPDATE: Heap overwrite in subtitle parsing
+    - debian/patches/CVE-2023-37328-1.patch: look for the closing > of a
+      tag after the opening < in gst/subparse/gstsubparse.c.
+    - debian/patches/CVE-2023-37328-2.patch: skip after the end of a valid
+      closing tag in gst/subparse/gstsubparse.c.
+    - CVE-2023-37328
+  * SECURITY UPDATE: Integer overflow leading to heap overwrite in FLAC
+    image tag handling
+    - debian/patches/CVE-2023-37327-2.patch: don't allow image tags with
+      G_MAXUINT32 length in gst-libs/gst/tag/tags.c.
+    - CVE-2023-37327
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 01 Aug 2023 08:26:17 -0400
 
 gst-plugins-base1.0 (1.20.1-1) unstable; urgency=medium
 
