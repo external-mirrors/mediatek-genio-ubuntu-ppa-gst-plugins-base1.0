@@ -1,10 +1,14 @@
-gst-plugins-base1.0 (1.20.1-1ubuntu0.1genio1) jammy; urgency=medium
+gst-plugins-base1.0 (1.20.1+genio23.1~pr2-0genio1) jammy; urgency=medium
 
   * Add patches from IoT Yocto v23.1 to support video decoder on 
-    Genio platform.
-  * Add new symbol introduced by the patches.
+    Genio platform. These patches are backported from GStreamer
+    1.22 to provides support on the MM21 output format.
+  * Based on 1.20.1-1ubuntu0.1
+  * This is a pre-release (PR2) package.
+  * Set upstream version name to include "+genio23.1" to 
+    make sure Genio PPA packages supercede all 1.20.1 security updates.
 
- -- Pablo Sun <pablo.sun@mediatek.com>  Thu, 20 Jul 2023 16:45:39 +0800
+ -- Pablo Sun <pablo.sun@mediatek.com>  Thu, 08 Aug 2023 10:59:23 +0800
 
 gst-plugins-base1.0 (1.20.1-1ubuntu0.1) jammy-security; urgency=medium
 
